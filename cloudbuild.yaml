@@ -1,0 +1,4 @@
+step:
+  - name: 'asia.gcr.io/cloud-builders/docker'
+    # docker build -t gcr.io/kajame/test-cloudbuild:v0.0.1  ./client
+    args: ['build', '-t', 'asia.gcr.io/kajame/test-cloudbuild:v0.0.1', './client']
