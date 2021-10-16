@@ -1,4 +1,4 @@
-step:
+steps:
 # docker build -t gcr.io/kajame/test-cloudbuild:v0.0.1  ./client
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/test-cloudbuild:$COMMIT_SHA', './client']
