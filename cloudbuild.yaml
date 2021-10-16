@@ -1,4 +1,8 @@
 step:
+  # docker build -t gcr.io/kajame/test-cloudbuild:v0.0.1  ./client
   - name: 'asia.gcr.io/cloud-builders/docker'
-    # docker build -t gcr.io/kajame/test-cloudbuild:v0.0.1  ./client
-    args: ['build', '-t', 'asia.gcr.io/kajame/test-cloudbuild:v0.0.1', './client']
+    args: ['build', '-t', 'asia.gcr.io/$PROJECT_ID/test-cloudbuild:$COMMIT_SHA', './client']
+
+  # docker push gcr.io/your-project-id/your-repository-name:your-tag  
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/test-cloudbuild:$COMMIT_SHA']
